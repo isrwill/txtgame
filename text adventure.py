@@ -35,15 +35,6 @@ def v_txt():
     ###VILLAGER###
     ##############
     """
-pass
-
-def player_card():
-        
-
-def
-number_characters_name = len(hero_name)
-    
-    
 
 blank = " "
 
@@ -51,11 +42,8 @@ npc_villager = v_txt.__doc__
 
 error = g_txt.__doc__ + invalid_txt.__doc__
 
-
-
 ##### GAMEPLAY #####
 play_game = input("WOULD YOU LIKE TO GO ON AN ADVENTURE? (yes/no)    ")
-
 if play_game.lower().strip() == "yes":
     print (game_voice)
     hero_name = input("HERO, WHAT SHOULD WE CALL YOU?       ")
