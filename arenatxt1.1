@@ -1,0 +1,149 @@
+import time
+import random
+import sys
+
+
+# functions
+
+def title_card():
+    """
+    ################################
+    ######COLOSSEUM#OF#TRIALS#######
+    ################################
+    """
+
+
+pass
+
+
+def time_delay():
+    time.sleep(1)
+    print("...")
+    time.sleep(2)
+
+
+pass
+
+
+def intro_display():
+    time_delay()
+    print("YOU WAKE UP CONFUSED AND TRY TO COLLECT YOUR THOUGHTS.")
+
+
+pass
+
+
+def player_choice():
+    choice = ""
+    while choice != "1" and choice != "2":
+        time_delay()
+        print("GAME: YOU TRY TO REMEMBER MORE ABOUT YOURSELF, BUT YOUR HEAD STARTS TO HURT, SO YOU GIVE UP.")
+        time_delay()
+        print("GAME: THUS, THE PEOPLE WILL KNOW YOU AS " + format(hero_name).upper() + " FROM " + format(
+            hero_home).upper() + "!!!")
+        time_delay()
+        print(
+            "GAME:" + format(hero_name).upper() + " FINDS HIMSELF IN A SMALL CELL AND HEARS SHOUTING IN THE DISTANCE.")
+        time_delay()
+        print(format(hero_name).upper() + ": WHERE AM I? WHY AM I IN THIS CELL? WHAT'S GOING ON?")
+        time_delay()
+        print("GAME: A SHORT BUT STOCKY MAN IN LEATHER ARMOR SLOWLY APPROACHES YOU...")
+        time_delay()
+        choice = input("GAME: HE TELLS YOU TO GET READY FOR YOUR FIGHT... DO YOU IGNORE HIM OR FOLLOW HIM...  ("
+                       "IGNORE: 1 FOLLOW: 2)    ")
+        print()
+
+        return choice
+    pass
+
+
+def check_choice(player_choice):
+    time_delay()
+    correct_choice = random.randint(1, 2)
+    if player_choice == str(correct_choice):
+        print("GAME: YOU ARE THROWN INTO THE ARENA AGAINST YOUR WILL, ACROSS FROM YOU STAND A TALL MAN, MUSCULAR MAN, "
+              "WITH A LARGE STEEL AXE ")
+        time_delay()
+    else:
+        print("GAME: YOU ENTER THE ARENA, STANDING ACROSS FOR YOU IS TATTERED MAN WITH A SWORD TREMBLING IN HIS HANDS ")
+        time_delay()
+
+
+pass
+
+# variables
+stages_remaining = 15
+clear_stage = 1
+
+
+# classes
+class Player:
+    def __init__(self, dmg, hp, shield):
+        self.hp = hp
+        self.dmg = dmg
+        self.shield = shield
+
+
+class Enemy:
+    class Slave:
+        def __init__(self, dmg, hp, shield):
+            self.hp = [1, 3, 5]
+            self.dmg = [1, 3]
+            self.shield = [1]
+
+    class Lion:
+        def __init__(self, dmg, hp, shield):
+            self.hp = [7, 9, 11]
+            self.dmg = [1, 3, 5]
+
+    class Gladiator:
+        def __init__(self, dmg, hp, shield):
+            self.hp = [10, 15, 20]
+            self.dmg = [5, 7, 9]
+            self.shield = [1, 3, 5]
+
+    class Champion:
+        def __init__(self, dmg, hp, shield):
+            self.hp = [30]
+            self.dmg = [10]
+            self.shield = [5]
+
+    class Solider:
+        def __init__(self, damage, health, block):
+            self.health = [10, 15, 20]
+            self.damage = [9, 11, 13, 15]
+            self.block = [10, 12, 14, 16]
+
+
+#needs attention
+def attacking():
+    if player.hp > 0:
+        slave.hp = slave.hp - player.dmg
+        if slave.hp > 0:
+            player.hp = player.hp - slave.dmg
+            if hp1 > 0:
+                return attack(player.hp, slave.hp, player.dmg, slave.dmg)
+            else:
+                print(format.upper(hero_name) + " DIED.")
+        else:
+            print(format.upper(hero_name) + " KILLED ENEMY")
+    else:
+        print(format.upper(hero_name) + " DIED.")
+
+
+pass
+
+print(title_card.__doc__)
+play_game = input("WOULD YOU LIKE TO BECOME A LEGEND? (y/n)    ")
+if play_game.lower().strip() == "y":
+    intro_display()
+    time_delay()
+    hero_name = input("PLAYER: WHATS MY NAME?       ")
+    time_delay()
+    hero_home = input(format(hero_name).upper() + ": WHERE AM I FROM?     ")
+    player_choice()
+
+
+
+else:
+    print('THANKS FOR COMING, HOPE YOU COME BACK')
